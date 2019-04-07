@@ -1,0 +1,43 @@
+{
+  "name": "airy",
+  "version": "0.1.0",
+  "description": "Find city's Air Quality index",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "air": "./cli.js"
+  },
+  "engines": {
+    "nodes": ">= 8"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yogicat/airy.git"
+  },
+  "keywords": [
+    "air",
+    "weather",
+    "airquality",
+    "aqi"
+  ],
+  "author": "yogicat",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yogicat/airy/issues"
+  },
+  "homepage": "https://github.com/yogicat/airy#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "chalk": "^2.4.2",
+    "meow": "^5.0.0",
+    "node-emoji": "^1.10.0",
+    "ora": "^3.4.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.1",
+    "dotenv": "^7.0.0",
+    "eslint": "^5.16.0"
+  }
+}
