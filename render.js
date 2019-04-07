@@ -56,7 +56,7 @@ class Render {
 
       Air looks ${chalk.green(`${emoji.get(results.emoji)}  ${results.level}`)}
       Air Quality Index is ${chalk.bold.green(results.aqi)}
-      for more information visit ${chalk.yellow(results.url)}
+      For more information visit ${chalk.yellow(results.url)}
     `)
   }
 }
