@@ -7,25 +7,30 @@ Search current air quality index by location.
 
 위치에 따른 현재 미세먼지 검색 cli
 
+---
+
+## Todo (0408)
+
+- [ ] Refactoring
+- [ ] Write test code
+
+---
+
 ## Installation
 
 `npm install -g air-cli`
 
 ## API Token
 
-air-cli uses data from https://aqicn.org/api/
-
-To use the cli, visit the site and get the token.
-
-Add your token using `--add` flag.
+- air-cli uses data from https://aqicn.org/api/
+- To use the cli, visit the site and get the token.
+- Add your token using `--add` flag.
 
 `$ air 29av922123 --add`
 
-air-cli는 https://aqicn.org/api/의 데이터를 사용한다.
-
-해당 사이트에서 토큰을 받아 `$ air <token-value> --add`로 등록한다.
-
-해당 명령어는 자동으로 `.env`를 생성해 TOKEN값을 저장한다.
+- air-cli는 https://aqicn.org/api/의 데이터를 사용한다.
+- 해당 사이트에서 토큰을 받아 `$ air <token-value> --add`로 등록한다.
+- 해당 명령어는 자동으로 `.env`를 생성해 TOKEN값을 저장한다.
 
 ## Usage
 
