@@ -37,9 +37,34 @@ class Render {
     }
   }
 
+  displaySucess(data) {
+    log(`
+       ${chalk.bold.green(data)}
+    `)
+  }
+
+  displayErrorMessage(data) {
+    log(`
+       ${chalk.bold.bgRed(data)}
+    `)
+  }
+
+  displayTokenError() {
+    log(`
+      Please add Token using ${chalk.bold.green('--add, -a')}
+    `)
+  }
+
+  displayHelpGuide() {
+    log(`
+      Use ${chalk.bold.green('--help, -h')} to get started!
+    `)
+  }
+
   displayError(data) {
     log(`
-      ${chalk.bold.bgRed(data)}
+      ${chalk.bold.bgRed('* Error Occured! *')}
+      ${data}
     `)
   }
 

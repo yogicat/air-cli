@@ -9,16 +9,21 @@ const cli = meow(
   `
   Usage
     Search by city
-    $ air <city>
+    $ air --in <city>
 
     Add api-token
-    $ air <Your Token Value> --add
+    $ air --add <Your Token Value>
+
+    Options
+      --add, -a         Add API Token
+      --in, -i          Search by location
+      --help, -h        Display Hepl
 
     Examples
-    $ air here ................... Show Air Quality on curreent location
-    $ air Seoul .................. Show Air Quality in Seoul
-    $ air x3ed91 --add, -a ....... Add API Token
-    $ air --help, -h ............. Show Help
+    $ air --in here ............. Show Air Quality based on curreent location
+    $ air --in Seoul ............ Show Air Quality in Seoul
+    $ air --add 2zd82s .......... Add API Token
+    $ air --help ................ Show Help
 
     API
     https://aqicn.org/api/
@@ -32,6 +37,10 @@ const cli = meow(
       add: {
         type: 'boolean',
         alias: 'a'
+      },
+      in: {
+        type: 'boolean',
+        alias: 'i'
       }
     }
   }
