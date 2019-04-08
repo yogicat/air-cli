@@ -1,22 +1,26 @@
 'use strict'
-const ora = require('ora')
-
+const render = require('./render')
 const { setToken, searchData, displayHelp } = require('./utils')
 
 const air = (input, flags) => {
-  const loader = ora().start()
-
   if (flags.add) {
-    loader.stop()
-    return setToken(input)
+    if (!input) {
+      render.displayErrorMessage('Missing token value')
+      process.exit(1)
+    } else {
+      return setToken(input)
+    }
   }
 
   if (flags.in) {
-    loader.stop()
-    return searchData(input)
+    if (!input) {
+      render.displayErrorMessage('Missing location')
+      process.exit(1)
+    } else {
+      return searchData(input)
+    }
   }
 
-  loader.stop()
   return displayHelp()
 }
 

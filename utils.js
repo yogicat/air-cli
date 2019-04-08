@@ -1,26 +1,16 @@
-const fs = require('fs')
-const path = require('path')
 const axios = require('axios')
+const Conf = require('conf')
 const render = require('./render')
 
+const config = new Conf()
+
 const setToken = token => {
-  if (token === undefined) {
-    render.displayErrorMessage('* Missing token value *')
-    process.exit(1)
-  }
-  fs.writeFileSync(path.join(__dirname, '.env'), `TOKEN=${token}`, () => {
-    render.displaySucess('Token Saved')
-    process.exit(0)
-  })
+  config.set('TOKEN', token)
+  render.displaySucess('Token Saved')
 }
 
 const getData = async input => {
-  if (input === undefined) {
-    render.displayErrorMessage('* Missing location *')
-    process.exit(1)
-  }
-
-  if (!process.env.TOKEN) {
+  if (!config.has('TOKEN')) {
     render.displayTokenError()
     process.exit(1)
   }
@@ -28,7 +18,7 @@ const getData = async input => {
   try {
     const url = 'http://api.waqi.info/feed/'
     const { data } = await axios.get(
-      `${url}${input}/?token=${process.env.TOKEN}`
+      `${url}${input}/?token=${config.get('TOKEN')}`
     )
     return data
   } catch (err) {
@@ -41,7 +31,7 @@ const searchData = async input => {
   const data = await getData(input)
 
   if (data.status !== 'ok') {
-    render.displayErrorMessage('* No city found *')
+    render.displayErrorMessage('No city found')
     process.exit(1)
   }
 

@@ -1,10 +1,10 @@
 {
-  "name": "airy",
-  "version": "0.1.0",
-  "description": "Find city's Air Quality index",
+  "name": "air-cli",
+  "version": "1.0.0",
+  "description": "Get Current Air Quality Index in CLI",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "test"
   },
   "bin": {
     "air": "./cli.js"
@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yogicat/airy.git"
+    "url": "git+https://github.com/yogicat/air-cli.git"
   },
   "keywords": [
     "air",
@@ -25,19 +25,19 @@
   "author": "yogicat",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/yogicat/airy/issues"
+    "url": "https://github.com/yogicat/air-cli/issues"
   },
-  "homepage": "https://github.com/yogicat/airy#readme",
+  "homepage": "https://github.com/yogicat/air-cli#readme",
   "dependencies": {
     "axios": "^0.18.0",
     "chalk": "^2.4.2",
+    "conf": "^4.0.0",
+    "dotenv": "^7.0.0",
     "meow": "^5.0.0",
-    "node-emoji": "^1.10.0",
-    "ora": "^3.4.0"
+    "node-emoji": "^1.10.0"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",
-    "dotenv": "^7.0.0",
     "eslint": "^5.16.0"
   }
 }
