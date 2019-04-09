@@ -1,6 +1,6 @@
 {
   "name": "air-cli",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Get Current Air Quality Index in CLI",
   "main": "index.js",
   "scripts": {
