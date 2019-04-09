@@ -20,7 +20,9 @@
     "air",
     "weather",
     "airquality",
-    "aqi"
+    "aqi",
+    "cli",
+    "forecast"
   ],
   "author": "yogicat",
   "license": "MIT",

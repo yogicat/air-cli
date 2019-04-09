@@ -1,6 +1,6 @@
 const chalk = require('chalk')
 const emoji = require('node-emoji')
-const { log } = require('console')
+const { log, error } = require('console')
 
 class Render {
   _getDescription(aqi) {
@@ -37,35 +37,26 @@ class Render {
     }
   }
 
-  displaySucess(data) {
+  displaySucess(message) {
     log(`
-       ${chalk.bold.green(data)}
+       ${chalk.bold.green(message)}
     `)
+    process.exit(0)
   }
 
-  displayErrorMessage(data) {
-    log(`
-       ${chalk.bold.bgRed(data)}
+  displayError(message) {
+    error(`
+      ${chalk.bold.bgRed(message)}
     `)
+    process.exit(1)
   }
 
-  displayTokenError() {
-    log(`
-      Please add Token using ${chalk.bold.green('--add, -a')}
-    `)
-  }
-
-  displayHelpGuide() {
-    log(`
-      Use ${chalk.bold.green('--help, -h')} to get started!
-    `)
-  }
-
-  displayError(data) {
-    log(`
+  displayErrorWithData(data) {
+    error(`
       ${chalk.bold.bgRed('* Error Occured! *')}
       ${data}
     `)
+    process.exit(1)
   }
 
   displayData({ data }) {

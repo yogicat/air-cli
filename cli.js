@@ -1,10 +1,7 @@
 #!/usr/bin/env node
 'use strict'
-require('dotenv').config()
-
 const meow = require('meow')
-const air = require('./index')
-
+const { addToken, fetchData, getToken, removeToken } = require('./index')
 const cli = meow(
   `
   Usage
@@ -38,6 +35,14 @@ const cli = meow(
         type: 'boolean',
         alias: 'a'
       },
+      token: {
+        type: 'boolean',
+        alias: 't'
+      },
+      remove: {
+        type: 'boolean',
+        alias: 'r'
+      },
       in: {
         type: 'boolean',
         alias: 'i'
@@ -46,4 +51,17 @@ const cli = meow(
   }
 )
 
-air(cli.input[0], cli.flags)
+const input = cli.input[0]
+const { add: ADD, in: IN, token: TOKEN, remove: REMOVE } = cli.flags
+
+if (ADD) {
+  addToken(input)
+} else if (IN) {
+  fetchData(input)
+} else if (TOKEN) {
+  getToken()
+} else if (REMOVE) {
+  removeToken()
+} else {
+  cli.showHelp()
+}
