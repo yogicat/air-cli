@@ -1,9 +1,9 @@
 # Air-cli
 
+![screenshot](air-cli-screenshot.png)
+
 Air quality commandline App
 Search current air quality index by location.
-
-위치에 따른 현재 미세먼지 검색 CLI APP
 
 ---
 
@@ -18,9 +18,6 @@ Search current air quality index by location.
 - Add your token using `--add` flag.
 
 `$ air --add 29av922123`
-
-- air-cli는 https://aqicn.org/api/의 데이터를 사용한다.
-- 해당 사이트에서 토큰을 받아 `$ air --add`로 등록한다.
 
 ## Usage
 
@@ -54,3 +51,12 @@ Search current air quality index by location.
 ## Data
 
 https://aqicn.org/api/
+
+## License
+
+Licensed under MIT.
+
+## Issues
+
+Report a bug in issues.
+Made with love in Seoul by [Yogicat](https://www.github.com/yogicat)
