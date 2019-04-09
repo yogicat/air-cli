@@ -1,11 +1,9 @@
 # Air-cli
 
-![screenshot](screenshot_air-cli.png)
-
-Air quality commandline Tool
+Air quality commandline App
 Search current air quality index by location.
 
-위치에 따른 현재 미세먼지 검색 cli
+위치에 따른 현재 미세먼지 검색 CLI APP
 
 ---
 
@@ -23,12 +21,11 @@ Search current air quality index by location.
 
 - air-cli는 https://aqicn.org/api/의 데이터를 사용한다.
 - 해당 사이트에서 토큰을 받아 `$ air --add`로 등록한다.
-- 해당 명령어는 자동으로 `.env`를 생성해 TOKEN값을 저장한다.
 
 ## Usage
 
 ```
-  Usage
+   Usage
     Search by city
     $ air --in <city>
 
@@ -37,19 +34,23 @@ Search current air quality index by location.
 
     Options
       --add, -a         Add API Token
+      --token,-t        Show saved token
+      --remove, -r      Remove token
       --in, -i          Search by location
-      --help, -h        Display Hepl
+      --help, -h        Display Heol
 
     Examples
     $ air --in here ............. Show Air Quality based on curreent location
     $ air --in Seoul ............ Show Air Quality in Seoul
     $ air --add 2zd82s .......... Add API Token
+    $ air --token ............... Show saved token
     $ air --help ................ Show Help
 
     API
     https://aqicn.org/api/
+`,
 ```
 
-`$ air --in here` retruns current location's data based on the IP address.
+## Data
 
-`$ air --in here`는 IP주소에 따라, 현재 위치에 해당하는 공기정보를 제공한다.
+https://aqicn.org/api/

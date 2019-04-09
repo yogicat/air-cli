@@ -13,13 +13,16 @@ const cli = meow(
 
     Options
       --add, -a         Add API Token
+      --token,-t        Show saved token
+      --remove, -r      Remove token
       --in, -i          Search by location
-      --help, -h        Display Hepl
+      --help, -h        Display Heol
 
     Examples
     $ air --in here ............. Show Air Quality based on curreent location
     $ air --in Seoul ............ Show Air Quality in Seoul
     $ air --add 2zd82s .......... Add API Token
+    $ air --token ............... Show saved token
     $ air --help ................ Show Help
 
     API
