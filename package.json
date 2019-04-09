@@ -24,6 +24,11 @@
     "cli",
     "forecast"
   ],
+  "files": [
+    "cli.js",
+    "index.js",
+    "render.js"
+  ],
   "author": "yogicat",
   "license": "MIT",
   "bugs": {

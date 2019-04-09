@@ -2,8 +2,10 @@
 const Conf = require('conf')
 const axios = require('axios')
 const { displaySucess, displayError, displayData } = require('./render')
+
+const config = new Conf({ projectName: 'air-cli' })
+
 const url = 'http://api.waqi.info/feed/'
-const config = new Conf()
 
 const addToken = token => {
   try {
@@ -28,8 +30,8 @@ const removeToken = () => {
 const fetchData = async input => {
   try {
     const token = config.get('APIKEY')
+    if (!token) throw 'Please use valid token'
     if (!input) throw 'Please provide location'
-    if (!token) throw 'invalid token'
     const { data } = await axios.get(`${url}${input}/?token=${token}`)
     if (data.status === 'error') throw 'Fetching error'
     displayData(data)
