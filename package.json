@@ -25,7 +25,6 @@
     "forecast"
   ],
   "files": [
-    "cli.js",
     "index.js",
     "render.js"
   ],
