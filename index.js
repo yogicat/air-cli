@@ -1,12 +1,13 @@
 #!/usr/bin/env node
 'use strict'
+const pkg = require('./package.json')
+const Configstore = require('configstore')
 const meow = require('meow')
-const Conf = require('conf')
 const axios = require('axios')
 
 const { displaySucess, displayError, displayData } = require('./render')
 const url = 'http://api.waqi.info/feed/'
-const config = new Conf()
+const conf = new Configstore(pkg.name)
 const cli = meow(
   `
   Usage
@@ -64,7 +65,7 @@ const { add: ADD, in: IN, token: TOKEN, remove: REMOVE } = cli.flags
 
 const fetchData = async input => {
   try {
-    const token = config.get('APIKEY')
+    const token = conf.get('APIKEY')
     if (!token) throw 'Please use valid token'
     if (!input) throw 'Please provide location'
     const { data } = await axios.get(`${url}${input}/?token=${token}`)
@@ -78,18 +79,18 @@ const fetchData = async input => {
 if (ADD) {
   try {
     if (!input) throw 'Please provide token'
-    config.set('APIKEY', input)
-    displaySucess(`Token ${input} Saved in`, config.path)
+    conf.set('APIKEY', input)
+    displaySucess(`Token ${input} Saved in ${conf.path}`)
   } catch (e) {
     displayError(e)
   }
 } else if (IN) {
   fetchData(input)
 } else if (TOKEN) {
-  const token = config.get('APIKEY') || undefined
+  const token = conf.get('APIKEY') || undefined
   displaySucess(token ? `Saved token : ${token}` : 'No token saved.')
 } else if (REMOVE) {
-  config.clear()
+  conf.clear()
   displaySucess('Token Removed')
 } else {
   cli.showHelp()
