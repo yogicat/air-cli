@@ -2,8 +2,9 @@
 
 ![screenshot](air-cli-screenshot.png)
 
-Air quality commandline App
-Search current air quality index by location.
+Air-CLI is ann Air Quality Command Line App.
+
+_Search current AQI by location._
 
 ---
 
@@ -11,13 +12,15 @@ Search current air quality index by location.
 
 `npm install -g air-cli`
 
+- Download the app and install globally.
+
 ## API Token
+
+`$ air --add 29av922123`
 
 - air-cli uses data from https://aqicn.org/api/
 - To use the cli, visit the site and get the token.
 - Add your token using `--add` flag.
-
-`$ air --add 29av922123`
 
 ## Usage
 
