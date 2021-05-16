@@ -35,14 +35,14 @@
   },
   "homepage": "https://github.com/yogicat/air-cli#readme",
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "chalk": "^2.4.2",
     "configstore": "^4.0.0",
-    "meow": "^5.0.0",
+    "meow": "^10.0.0",
     "node-emoji": "^1.10.0"
   },
   "devDependencies": {
-    "babel-eslint": "^10.0.1",
+    "babel-eslint": "^10.1.0",
     "eslint": "^5.16.0"
   }
 }
