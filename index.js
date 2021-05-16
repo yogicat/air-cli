@@ -5,7 +5,7 @@ const Configstore = require('configstore')
 const meow = require('meow')
 const axios = require('axios')
 
-const { displaySucess, displayError, displayData } = require('./render')
+const { displaySuccess, displayError, displayData } = require('./render')
 const url = 'http://api.waqi.info/feed/'
 const conf = new Configstore(pkg.name)
 const cli = meow(
@@ -80,7 +80,7 @@ if (ADD) {
   try {
     if (!input) throw 'Please provide token'
     conf.set('APIKEY', input)
-    displaySucess(`Token ${input} Saved in ${conf.path}`)
+    displaySuccess(`Token ${input} Saved in ${conf.path}`)
   } catch (e) {
     displayError(e)
   }
@@ -88,10 +88,10 @@ if (ADD) {
   fetchData(input)
 } else if (TOKEN) {
   const token = conf.get('APIKEY') || undefined
-  displaySucess(token ? `Saved token : ${token}` : 'No token saved.')
+  displaySuccess(token ? `Saved token : ${token}` : 'No token saved.')
 } else if (REMOVE) {
   conf.clear()
-  displaySucess('Token Removed')
+  displaySuccess('Token Removed')
 } else {
   cli.showHelp()
 }

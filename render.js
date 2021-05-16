@@ -2,55 +2,55 @@ const chalk = require('chalk')
 const emoji = require('node-emoji')
 const { log, error } = require('console')
 
-const _getDescription = aqi => {
+const _getDescription = (aqi) => {
   if (aqi > 0 && aqi <= 50) {
     return {
       emoji: 'thumbsup',
-      level: 'Good'
+      level: 'Good',
     }
   } else if (aqi > 50 && aqi <= 100) {
     return {
       emoji: 'ok_hand',
-      level: 'Moderate'
+      level: 'Moderate',
     }
   } else if (aqi > 100 && aqi <= 150) {
     return {
       emoji: 'warning',
-      level: 'Unhealthy for Sentitive Group'
+      level: 'Unhealthy for Sentitive Group',
     }
   } else if (aqi > 150 && aqi <= 200) {
     return {
       emoji: 'red_circle',
-      level: 'Unhealthy!'
+      level: 'Unhealthy!',
     }
   } else if (aqi > 200 && aqi <= 300) {
     return {
       emoji: 'imp',
-      level: 'Very Unhealthy!'
+      level: 'Very Unhealthy!',
     }
   } else {
     return {
       emoji: 'skull_and_crossbones',
-      level: 'Hazardous'
+      level: 'Hazardous',
     }
   }
 }
 
-const displaySucess = message => {
+const displaySuccess = (message) => {
   log(`
        ${chalk.bold.green(message)}
     `)
   process.exit(0)
 }
 
-const displayError = message => {
+const displayError = (message) => {
   error(`
       ${chalk.bold.bgRed(message)}
     `)
   process.exit(1)
 }
 
-const displayErrorWithData = data => {
+const displayErrorWithData = (data) => {
   error(`
       ${chalk.bold.bgRed('* Error Occured! *')}
       ${data}
@@ -63,7 +63,7 @@ const displayData = ({ data }) => {
     aqi: data.aqi,
     city: data.city.name,
     url: data.city.url,
-    ..._getDescription(data.aqi)
+    ..._getDescription(data.aqi),
   }
 
   log(`
@@ -77,7 +77,7 @@ const displayData = ({ data }) => {
 
 module.exports = {
   displayError,
-  displaySucess,
+  displaySuccess,
   displayErrorWithData,
-  displayData
+  displayData,
 }
