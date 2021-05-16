@@ -1,6 +1,6 @@
 {
   "name": "air-cli",
-  "version": "0.0.5",
+  "version": "0.0.4",
   "description": "Get Current Air Quality Index in CLI",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,7 @@
     "air": "./index.js"
   },
   "engines": {
-    "nodes": ">= 8"
+    "nodes": ">= 12"
   },
   "repository": {
     "type": "git",
@@ -38,7 +38,7 @@
     "axios": "^0.21.1",
     "chalk": "^2.4.2",
     "configstore": "^4.0.0",
-    "meow": "^10.0.0",
+    "meow": "^5.0.0",
     "node-emoji": "^1.10.0"
   },
   "devDependencies": {

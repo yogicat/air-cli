@@ -25,7 +25,7 @@ const cli = meow(
       --help, -h        Display Heol
 
     Examples
-    $ air --in here ............. Show Air Quality based on curreent location
+    $ air --in here ............. Show Air Quality based on current location
     $ air --in Seoul ............ Show Air Quality in Seoul
     $ air --add 2zd82s .......... Add API Token
     $ air --token ............... Show saved token
@@ -38,32 +38,32 @@ const cli = meow(
     flags: {
       help: {
         type: 'boolean',
-        alias: 'h'
+        alias: 'h',
       },
       add: {
         type: 'boolean',
-        alias: 'a'
+        alias: 'a',
       },
       token: {
         type: 'boolean',
-        alias: 't'
+        alias: 't',
       },
       remove: {
         type: 'boolean',
-        alias: 'r'
+        alias: 'r',
       },
       in: {
         type: 'boolean',
-        alias: 'i'
-      }
-    }
+        alias: 'i',
+      },
+    },
   }
 )
 
 const input = cli.input[0]
 const { add: ADD, in: IN, token: TOKEN, remove: REMOVE } = cli.flags
 
-const fetchData = async input => {
+const fetchData = async (input) => {
   try {
     const token = conf.get('APIKEY')
     if (!token) throw 'Please use valid token'
